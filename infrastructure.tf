@@ -13,4 +13,5 @@ resource "aws_instance" "kea" {
   instance_type = "t2.nano"
   key_name = "kea_tech"
   security_groups = ["kea_tech"]
+  count = 3
 }
