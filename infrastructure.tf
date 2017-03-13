@@ -14,4 +14,7 @@ resource "aws_instance" "kea" {
   key_name = "kea_tech"
   security_groups = ["kea_tech"]
   count = 3
+  root_block_device {
+    delete_on_termination = false
+  }
 }
