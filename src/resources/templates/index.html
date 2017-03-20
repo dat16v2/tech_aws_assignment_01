@@ -3,17 +3,17 @@
     <title>SB: Server info</title>
 </head>
 
-<body>
-<div id="primary">
-    <span>Response served by</span>
-    <p>
-        NODE IP: <span th:text="${nodeip}"></span>
+<body style="background-color: #e7dbf5;">
+<div id="primary" style="font-family: 'Open Sans'">
+    <h1 style="text-align: center; color: #767777">Response served by</h1>
+    <p style="text-align: center; color: #767777">
+        <span style="color: #F0FFFF">§</span> NODE IP: <span th:text="${nodeip}"></span>
         <br />
-        Client IP: <span th:text="${clientip}"></span>
+        <span style="color: #F0FFFF">§</span> Client IP: <span th:text="${clientip}"></span>
         <br />
-        Version: <span th:text="${version}"></span>
+        <span style="color: #F0FFFF">§</span> Version: <span style="color: #596060" th:text="${version}"></span>
         <br />
-        Time: <span th:text="${timestamp}"></span>
+        <span style="color: #F0FFFF">§</span> Time: <span th:text="${timestamp}"></span>
     </p>
 </div>
 </body>
