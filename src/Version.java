@@ -1,15 +1,15 @@
-import org.springframework.core.io.ClassPathResource;
-
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Version {
     public static String getHash() {
         StringBuilder sb = new StringBuilder();
+        final ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
+
         try {
-            FileReader fr = new FileReader(new ClassPathResource("version.txt").getFile());
-            BufferedReader br = new BufferedReader(fr);
+            BufferedReader br = new BufferedReader(new InputStreamReader(contextClassLoader.getResourceAsStream("var/version.txt")));
+            // Get first 8 characters of hash.
             for (int i = 0; i < 8; i++) {
                 sb.append((char) br.read());
             }
