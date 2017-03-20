@@ -9,7 +9,7 @@
     <groupId>phuongandfriends</groupId>
     <version>1.0</version>
     <name>tech3</name>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <artifactId>${project.groupId}_mandatory_assignment_${project.name}</artifactId>
 
     <properties>
@@ -33,13 +33,19 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <!-- WAR SPECIFIC DEPENDENCY -->
-        <!--
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
-        -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

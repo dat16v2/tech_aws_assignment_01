@@ -1,0 +1,21 @@
+body {
+    background-color: #e7dbf5;
+}
+
+#primary {
+    font-family: "Open Sans";
+}
+
+#primary h1 {
+    text-align: center;
+    color: #767777;
+}
+
+#primary p {
+    text-align: center;
+    color: #767777;
+}
+
+#primary span {
+    color: #F0FFFF;
+}

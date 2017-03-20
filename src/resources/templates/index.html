@@ -1,19 +1,20 @@
 <html>
 <head>
     <title>SB: Server info</title>
+    <link rel="stylesheet" href="/asset/css/bundle.css" />
 </head>
 
-<body style="background-color: #e7dbf5;">
-<div id="primary" style="font-family: 'Open Sans'">
-    <h1 style="text-align: center; color: #767777">Response served by</h1>
-    <p style="text-align: center; color: #767777">
-        <span style="color: #F0FFFF">§</span> NODE IP: <span th:text="${nodeip}"></span>
+<body>
+<div id="primary">
+    <h1>Response served by</h1>
+    <p>
+        <span>§</span> NODE IP: <span th:text="${nodeip}"></span>
         <br />
-        <span style="color: #F0FFFF">§</span> Client IP: <span th:text="${clientip}"></span>
+        <span>§</span> Client IP: <span th:text="${clientip}"></span>
         <br />
-        <span style="color: #F0FFFF">§</span> Version: <span style="color: #596060" th:text="${version}"></span>
+        <span>§</span> Version: <a th:href="@{'https://github.com/dat16v2/tech_aws_assignment_01/commit/' + ${version}}"><span style="color: #596060" th:text="${version}"></span></a>
         <br />
-        <span style="color: #F0FFFF">§</span> Time: <span th:text="${timestamp}"></span>
+        <span>§</span> Time: <span th:text="${timestamp}"></span>
     </p>
 </div>
 </body>
