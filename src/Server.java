@@ -1,6 +1,7 @@
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,12 +15,13 @@ import java.util.Date;
 @EnableAutoConfiguration
 public class Server {
 
-    @RequestMapping("/")
+    /*
+    @RequestMapping(path = "/")
     @ResponseBody
-    String index(HttpServletRequest request) {
+    public String index(HttpServletRequest request) {
         InetAddress nodeAddress = null;
 
-        String versionHash = "34as71";
+        String versionHash = Version.getHash();
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
@@ -29,12 +31,35 @@ public class Server {
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
+
         String body = String.format("Response served by<br>§ Node IP: %s<br>§ Client IP: %s<br>§ Server version: %s<br>§ Date: %s",
                 nodeAddress.getHostAddress(),
                 request.getRemoteAddr(),
                 versionHash,
                 fullTimestamp);
         return body;
+    }
+    */
+
+    @RequestMapping(path = "/")
+    public String test(Model model, HttpServletRequest request) {
+        InetAddress nodeAddress = null;
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        String fullTimestamp = dateFormat.format(date);
+
+        try {
+            nodeAddress = InetAddress.getLocalHost();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+
+        model.addAttribute("version", Version.getHash());
+        model.addAttribute("nodeip", nodeAddress.getHostAddress());
+        model.addAttribute("clientip", request.getRemoteAddr());
+        model.addAttribute("timestamp", fullTimestamp);
+        return "index";
     }
 
     public static void main(String[] args) {

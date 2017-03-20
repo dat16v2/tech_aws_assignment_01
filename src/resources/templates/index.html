@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>SB: Server info</title>
+</head>
+
+<body>
+<div id="primary">
+    <span>Response served by</span>
+    <p>
+        NODE IP: <span th:text="${nodeip}"></span>
+        <br />
+        Client IP: <span th:text="${clientip}"></span>
+        <br />
+        Version: <span th:text="${version}"></span>
+        <br />
+        Time: <span th:text="${timestamp}"></span>
+    </p>
+</div>
+</body>
+</html>
