@@ -1,0 +1,13 @@
+[Unit]
+Description=KEA Tech down.seq.tf
+
+[Service]
+WorkingDirectory=/home/centos/go/src/faker.clausen/root/stil-status
+ExecStart=/home/centos/go/src/faker.clausen/root/stil-status/server
+GuessMainPID=no
+Type=simple
+User=centos
+Group=centos
+
+[Install]
+WantedBy=multi-user.target
