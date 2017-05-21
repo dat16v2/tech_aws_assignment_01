@@ -12,11 +12,13 @@ resource "aws_instance" "kea" {
   ami = "ami-9bf712f4"
   instance_type = "t2.small"
   key_name = "kea_tech"
-  security_groups = ["kea_tech"]
+  vpc_security_group_ids = ["sg-39dd4052"]
   count = 1
   root_block_device {
     delete_on_termination = false
   }
+
+  subnet_id = "subnet-32563b48"
 
   provisioner "file" {
     source = "/Users/ec/go/src/faker.clausen/root/stil-status"
